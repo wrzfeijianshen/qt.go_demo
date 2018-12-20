@@ -1,1 +1,0 @@
-# qt.go_demo
