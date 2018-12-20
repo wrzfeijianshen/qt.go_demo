@@ -8,5 +8,6 @@
 
 参加官方qq群 933636020 
 
-github : https://gitee.com/wrzfeijianshen/qt.go_demo.git
-码云 :   https://github.com/wrzfeijianshen/qt.go_demo.git
+码云  : https://gitee.com/wrzfeijianshen/qt.go_demo.git
+
+github :   https://github.com/wrzfeijianshen/qt.go_demo.git
