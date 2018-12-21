@@ -27,3 +27,19 @@ Qt Namespace 中定义了很多的全局变量值,咱们可以在qnamespace.go �
 ```
 ## Pen Style
 
+```
+		f1 := func(painter *qtgui.QPainter) {
+			//func (this *QPainter) SetPen2(style int) style :0-6
+			for i := 0; i < 6; i++ {
+				painter.SetPen2(i)
+				painter.DrawLine2(10, 10+i*20, 100, 10+i*20)
+			}
+
+			painter.SetPen2(qtcore.Qt__DashLine)
+			painter.DrawLine2(10, 10+150, 200, 10+150)
+		}
+		mw.Form.InheritInitPainter(f1)
+```
+这仅仅是开个头,让大家熟悉如何定义使用,建议还是要熟悉qt这个开源框架,才能够顺利上手.如何画线画各种图形,留做以后在专门章节阐述.
+
+![](file_pic/01.png)

@@ -26,8 +26,7 @@ func main() {
 	}
 	mw.Form.Show()
 
-	eg = true
-	if eg {
+	if false {
 		f1 := func(painter *qtgui.QPainter) {
 			var qcolor qtgui.QColor
 
@@ -35,6 +34,20 @@ func main() {
 
 			painter.SetPen(s)
 			painter.DrawLine2(10, 10, 100, 100)
+		}
+		mw.Form.InheritInitPainter(f1)
+	}
+
+	if true {
+		f1 := func(painter *qtgui.QPainter) {
+			//func (this *QPainter) SetPen2(style int) style :0-6
+			for i := 0; i < 6; i++ {
+				painter.SetPen2(i)
+				painter.DrawLine2(10, 10+i*20, 100, 10+i*20)
+			}
+
+			painter.SetPen2(qtcore.Qt__DashLine)
+			painter.DrawLine2(10, 10+150, 200, 10+150)
 		}
 		mw.Form.InheritInitPainter(f1)
 	}
