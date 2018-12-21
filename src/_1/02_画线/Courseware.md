@@ -32,6 +32,28 @@ func (this *QWidget) InheritInitPainter(f func(painter *qtgui.QPainter /*777 QPa
 
 qt帮助文档中和qtgo源码中,如下,在c++中,函数重载,在go中不允许,故采用名称1,名称2,参数变成golang 的,根据参数的字母顺序决定1,2,3的顺序. 使用上其实差不多.
 
+故可以参考kitech\qt.go\docs\name-conversion.md
+中一些介绍.
+```
+* QtCore => qtcore.
+* QtGui => qtgui.
+* QtWidgets => qtwidgets.
+
+`show() => Show()`
+
+`arg() => Arg1()`
+类构造函数 在类名中添加“New”前缀:“NewQPushButton(…)”
+
+protected methods
+Add `Inherit` prefix to method name: `InheritMouseMoveEvent(...)`
+
+class internal enums
+`QWidget::DrawWindowBackground`
+`QWidget::DrawChildren`
+### QString Except `QString` class wrapper itself, all other `QString` are replaced with go `string`.
+
+```
+
 ```
 qt src:
 void	setPen(const QPen &pen)
