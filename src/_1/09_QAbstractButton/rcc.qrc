@@ -1,0 +1,11 @@
+<RCC>
+  <qresource prefix="Images">
+    <file>images/dingding.ico</file>
+    <file>images/g8.png</file>
+    <file>images/life.jpg</file>
+    <file>images/logo.jpg</file>
+    <file>images/logo1.png</file>
+    <file>images/logo2.bmp</file>
+    <file>images/zb.gif</file>
+  </qresource>
+</RCC>

@@ -85,10 +85,11 @@ func main() {
 		mw.Label.SetScaledContents(true)
 	}
 
-	if false {
+	if true {
 		// 好像不支持jpg动画
-		var pMovie *qtgui.QMovie
-		pMovie = pMovie.NewForInherit2p("d:\\zb.gif")
+		// var pMovie *qtgui.QMovie
+		// pMovie = pMovie.NewForInherit2p("d:\\zb.gif")
+		pMovie := qtgui.NewQMovie2p("d:\\zb.gif")
 		mw.Label.SetMovie(pMovie)
 		mw.Label.SetFixedSize1(125, 125)
 		mw.Label.SetScaledContents(true)
@@ -101,7 +102,7 @@ func main() {
 	}
 
 	// 超链接
-	if true {
+	if false {
 		mw.Label.SetText("<a href = \"http://blog.csdn.net/wrzfeijianshen\">飞剑神</a>")
 		mw.Label.SetOpenExternalLinks(true)
 	}
