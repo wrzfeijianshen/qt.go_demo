@@ -3,6 +3,8 @@ package main
 import (
 	"os"
 
+	"github.com/kitech/qt.go/qtgui"
+
 	"github.com/kitech/qt.go/qtcore"
 
 	_ "github.com/kitech/qt.go/qtgui"
@@ -13,9 +15,11 @@ func main() {
 	app := qtwidgets.NewQApplication(len(os.Args), os.Args, 0)
 
 	mw := NewUi_Form2()
-	mw.Label.SetText("hello world")
-	mw.Label.SetGeometry(10, 10, 200, 100)
-	mw.Label.SetStyleSheet("color:red")
+	if false {
+		mw.Label.SetText("hello world")
+		mw.Label.SetGeometry(10, 10, 200, 100)
+		mw.Label.SetStyleSheet("color:red")
+	}
 
 	if false {
 		mw.Label.SetAlignment(qtcore.Qt__AlignCenter) // 居中对齐
@@ -38,6 +42,9 @@ func main() {
 		strText := "<p style='line-height:150%'>"
 		strText += "一去二三里,烟村四五家.亭台六七座,八九十枝花."
 		strText += "</p>"
+		// 自动换行
+		mw.Label.SetWordWrap(true)
+
 		mw.Label.SetText(strText)
 	}
 
@@ -58,16 +65,46 @@ func main() {
 	}
 
 	// 富文本
-	if true {
+	if false {
 		strText := "<html><head><style> font{color:red;} #f{font-size:18px; color: green;} </style>  </head>  <body>  <font>I am a</font><font id=\"f\">Qter</font> <br/><br/>    <img src=\"https://csdnimg.cn/pubfooter/images/csdn-kf.png\" width=\"100\" height=\"100\" />      </body>         </html>"
 
 		mw.Label.SetText(strText)
-		// 图片不显示.
-		// strText1 := "<html><body> <img src=\"https://csdnimg.cn/pubfooter/images/csdn-kf.png\" width=\"100\" height=\"100\" /> </body> </html>"
-		// mw.Label.SetText(strText1)
+		// 图片不显示,待研究
+		strText1 := "<html><body> <img src=\"https://csdnimg.cn/pubfooter/images/csdn-kf.png\" width=\"100\" height=\"100\" /> </body> </html>"
+		mw.Label.SetText(strText1)
 		mw.Label.SetAlignment(qtcore.Qt__AlignCenter)
 	}
 
+	if false {
+		var pixmap *qtgui.QPixmap
+		// 不支持jpg,QPixmap/QImage不能读取jpg图像,但是可以读取bmp,png图像。
+		// "bmp", "pbm", "pgm", "png", "ppm", "xbm", "xpm" ,也就是目前只能支持这些格式。
+		pixmap = pixmap.NewForInherit3p("./Images/logo2.bmp")
+		mw.Label.SetPixmap(pixmap)
+		mw.Label.SetFixedSize1(100, 100)
+		mw.Label.SetScaledContents(true)
+	}
+
+	if false {
+		// 好像不支持jpg动画
+		var pMovie *qtgui.QMovie
+		pMovie = pMovie.NewForInherit2p("d:\\zb.gif")
+		mw.Label.SetMovie(pMovie)
+		mw.Label.SetFixedSize1(125, 125)
+		mw.Label.SetScaledContents(true)
+		pMovie.Start()
+	}
+
+	if false {
+		// mw.Label.SetNum(666)
+		mw.Label.SetNum1(66.666) // 显示数字
+	}
+
+	// 超链接
+	if true {
+		mw.Label.SetText("<a href = \"http://blog.csdn.net/wrzfeijianshen\">飞剑神</a>")
+		mw.Label.SetOpenExternalLinks(true)
+	}
 	mw.Form.Show()
 	app.Exec()
 }
