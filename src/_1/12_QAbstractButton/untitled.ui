@@ -13,25 +13,13 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>70</x>
-     <y>40</y>
-     <width>171</width>
-     <height>131</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="qrc.qrc">:/Images/images/g8.png</pixmap>
-   </property>
-  </widget>
+  <property name="windowIcon">
+   <iconset resource="rcc.qrc">
+    <normaloff>:/Images/images/dingding.ico</normaloff>:/Images/images/dingding.ico</iconset>
+  </property>
  </widget>
  <resources>
-  <include location="qrc.qrc"/>
+  <include location="rcc.qrc"/>
  </resources>
  <connections/>
 </ui>

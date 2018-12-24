@@ -23,8 +23,8 @@ func NewUi_Form() *Ui_Form {
 }
 
 type Ui_Form struct {
-	Label *qtwidgets.QLabel
-	Form  *qtwidgets.QWidget
+	Form *qtwidgets.QWidget
+	Icon *qtgui.QIcon // 116
 }
 
 //  struct block end
@@ -38,10 +38,9 @@ func (this *Ui_Form) SetupUi(Form *qtwidgets.QWidget) {
 		Form.SetObjectName("Form")
 	}
 	Form.Resize(400, 300)
-	this.Label = qtwidgets.NewQLabel(this.Form, 0)                                   // 111
-	this.Label.SetObjectName("Label")                                                // 112
-	this.Label.SetGeometry(70, 40, 171, 131)                                         // 114
-	this.Label.SetPixmap(qtgui.NewQPixmap3(":/Images/images/g8.png", "dummy123", 0)) // 114
+	this.Icon = qtgui.NewQIcon()
+	this.Icon.AddFile(":/Images/images/dingding.ico", qtcore.NewQSize(), qtgui.QIcon__Normal, qtgui.QIcon__Off) // 115
+	this.Form.SetWindowIcon(this.Icon)                                                                          // 114
 
 	this.RetranslateUi(Form)
 
@@ -57,7 +56,6 @@ func (this *Ui_Form) SetupUi(Form *qtwidgets.QWidget) {
 func (this *Ui_Form) RetranslateUi(Form *qtwidgets.QWidget) {
 	// noimpl: {
 	this.Form.SetWindowTitle(qtcore.QCoreApplication_Translate("Form", "Form", "dummy123", 0))
-	// noimpl: label->setText(QString());
 	// noimpl: } // retranslateUi
 	// noimpl:
 	// noimpl: };
