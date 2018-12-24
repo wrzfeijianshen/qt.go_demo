@@ -1,4 +1,4 @@
-QAbstractButton{
+QPushButton {
         background: rgb(68, 69, 73);
         border: 1px solid rgb(50, 50, 50);
         color: white;
