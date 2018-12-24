@@ -1,4 +1,4 @@
-﻿# 07 Qlabel
+﻿# 07 LCD Number
 
 添加Widget界面上添加一个LCD Number ,go-uic 生成ui.go,在Ui_Form里面有Label *qtwidgets.QLabel控件,咱们就进行操作QLabel,当然一些属性在设计师里面就可以直接修改,添加.
 
