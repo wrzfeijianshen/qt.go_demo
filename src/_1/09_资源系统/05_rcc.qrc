@@ -1,0 +1,15 @@
+<RCC>
+  <qresource prefix="/">
+    <file>images/logo1.png</file>
+  </qresource>
+  <qresource lang="en" prefix="/Images">
+    <file alias="g8.png">images/g8_En.png</file>
+  </qresource>
+  <qresource lang="zh" prefix="/Images">
+    <file alias="g8.png">images/g8_Cn.png</file>
+  </qresource>
+  <qresource prefix="/Images">
+    <file alias="g8.png">images/g8.png</file>
+	 <file>images/zb.gif</file>
+  </qresource>
+</RCC>
