@@ -15,6 +15,7 @@ func main() {
 	app := qtwidgets.NewQApplication(len(os.Args), os.Args, 0)
 
 	mw := NewUi_Form2()
+	mw.Form.Resize(350, 350)
 	if true {
 		// 加载qss
 		qss := qtcore.NewQFile1("./main.qss")

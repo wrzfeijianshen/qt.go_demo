@@ -1,9 +1,13 @@
 package main
 
 import (
+	_ "fmt"
 	"os"
 
+	_ "github.com/kitech/qt.go/qtgui"
+
 	"github.com/kitech/qt.go/qtcore"
+	_ "github.com/kitech/qt.go/qtrt"
 	"github.com/kitech/qt.go/qtwidgets"
 )
 
