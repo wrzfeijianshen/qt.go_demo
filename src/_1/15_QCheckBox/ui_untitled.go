@@ -24,7 +24,6 @@ func NewUi_Form() *Ui_Form {
 
 type Ui_Form struct {
 	Form *qtwidgets.QWidget
-	Icon *qtgui.QIcon // 116
 }
 
 //  struct block end
@@ -38,9 +37,6 @@ func (this *Ui_Form) SetupUi(Form *qtwidgets.QWidget) {
 		Form.SetObjectName("Form")
 	}
 	Form.Resize(400, 300)
-	this.Icon = qtgui.NewQIcon()
-	this.Icon.AddFile(":/Images/images/dingding.ico", qtcore.NewQSize(), qtgui.QIcon__Normal, qtgui.QIcon__Off) // 115
-	this.Form.SetWindowIcon(this.Icon)                                                                          // 114
 
 	this.RetranslateUi(Form)
 

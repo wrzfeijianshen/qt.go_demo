@@ -13,13 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <property name="windowIcon">
-   <iconset resource="rcc.qrc">
-    <normaloff>:/Images/images/dingding.ico</normaloff>:/Images/images/dingding.ico</iconset>
-  </property>
  </widget>
- <resources>
-  <include location="rcc.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
