@@ -1,0 +1,27 @@
+# Maintainer: XiaYeSuiFeng <gdigrgg@gmail.com>
+
+pkgname='qt5-inline'
+_pkgname='qt.inline'
+pkgver=5.12.106
+pkgrel=1
+pkgdesc="Qt5 C wrapper for FFI invoke original used in https://github.com/kitech/qt.go"
+arch=('x86_64')
+url="https://github.com/kitech/qt.inline"
+license=('GPL3')
+depends=('qt5-base' 'qt5-quickcontrols2' 'qt5-x11extras' 'qt5-imageformats' 'qt5-graphicaleffects')
+source=("https://github.com/kitech/qt.inline/archive/v$pkgver.tar.gz")
+sha256sums=('SKIP')
+
+build() {
+  mkdir -p "$_pkgname-$pkgver/build"
+  cd "$_pkgname-$pkgver/build"
+#  mkdir -p $_pkgname/build
+#  cd $_pkgname/build
+  cmake ..
+  make
+}
+
+package() {
+  cd "$srcdir/$_pkgname-$pkgver/build"
+  install -Dm 644 libQt5Inline.so "$pkgdir/usr/lib/libQt5Inline.so"
+}

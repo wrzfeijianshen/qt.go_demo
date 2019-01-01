@@ -52,16 +52,20 @@ qtoolbtn.SetToolButtonStyle(qtcore.Qt__ToolButtonTextUnderIcon)
 
 ```
 qAction := qtwidgets.NewQAction(mw.Form)
+
 qAction.SetText("工具按钮")
 icon := qtgui.NewQIcon2(":/images/logo1.png")
 qAction.SetIcon(icon)
 qtoolbtn := qtwidgets.NewQToolButton(mw.Form)
 qtoolbtn.SetIconSize(qtcore.NewQSize1(48, 48))
-//		qAction.SetToolTip("战斗不止")// 不生效?
+qtoolbtn.Move(100, 100)
+qtoolbtn.SetFixedSize1(220, 100)
+
 qtoolbtn.SetDefaultAction(qAction)
 qtoolbtn.SetToolButtonStyle(qtcore.Qt__ToolButtonTextUnderIcon)
-qtoolbtn.Move(100, 100)
-
-qtoolbtn.SetFixedSize1(220, 100)
+qAction.SetToolTip("战斗不止")
 ```
+
+鼠标停到这个button上,等一秒就会有这个战斗不止字样
+
 ![](file_pic/02.png)
