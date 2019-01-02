@@ -67,3 +67,6 @@ make -j4
 ![](file_pic/25.png)
 
 历经很长时间，不到40分钟 就会生成dll。
+
+用strip ./libQt5Inline.dll -o Qt5Inline.dll 去除符号表即可.
+linux : strip ./libQt5Inline.so
