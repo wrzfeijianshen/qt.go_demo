@@ -1,0 +1,6 @@
+[submodule "src/_2/Software_Tools/src/dep/go-charset"]
+	path = src/_2/Software_Tools/src/dep/go-charset
+	url = https://github.com/paulrosania/go-charset.git
+[submodule "src/_2/Software_Tools/src/dep/mahonia"]
+	path = src/_2/Software_Tools/src/dep/mahonia
+	url = https://github.com/axgle/mahonia.git

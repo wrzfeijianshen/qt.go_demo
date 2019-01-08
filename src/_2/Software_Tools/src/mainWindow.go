@@ -1,16 +1,29 @@
 package main
 
 import (
+	"bytes"
 	"fmt"
-	"io/ioutil"
-	"strings"
-
 	. "internal/common/iobase"
+	"io/ioutil"
+	"os"
+	"strings"
 
 	"github.com/kitech/qt.go/qtcore"
 	"github.com/kitech/qt.go/qtrt"
 	"github.com/kitech/qt.go/qtwidgets"
+
+	"golang.org/x/text/encoding/simplifiedchinese"
+	"golang.org/x/text/transform"
 )
+
+func GbkToUtf8(s []byte) ([]byte, error) {
+	reader := transform.NewReader(bytes.NewReader(s), simplifiedchinese.GBK.NewDecoder())
+	d, e := ioutil.ReadAll(reader)
+	if e != nil {
+		return nil, e
+	}
+	return d, nil
+}
 
 func (this *Ui_MainWindow) Slot() {
 	// 打开文件夹
@@ -94,8 +107,8 @@ func (this *Ui_MainWindow) Slot() {
 		path = strings.Replace(path, "/", "\\", -1)
 		fileFialog := qtwidgets.NewQFileDialog1(this.MainWindow, "打开文件", path, "*.*")
 		str := fileFialog.GetExistingDirectoryp()
-		// fmt.Println(str)
 		this.LineEdit_2.SetText(str)
+		fileFialog.Close()
 	})
 
 	// 编码转换 : 查找 按钮
@@ -136,8 +149,38 @@ func (this *Ui_MainWindow) Slot() {
 		this.PlainTextEdit_2.SetPlainText(str)
 	})
 
-	// 编码转换 : 读取编码
-	qtrt.Connect(this.PushButton_3, "clicked(bool)", func(bool) {
+	// 编码转换 : 打开文件 浏览
+	qtrt.Connect(this.PushButton_5, "clicked(bool)", func(bool) {
+		fmt.Println("请手动输入文件")
+		return
+		path := this.LineEdit_4.Text()
 
+		path = strings.Replace(path, "/", "\\", -1)
+		fileFialog := qtwidgets.NewQFileDialog1(nil, "打开文件", path, "*.*")
+		fileFialog.SetFileMode(qtwidgets.QFileDialog__ExistingFile)
+		fileFialog.Show()
+		// str := fileFialog.SelectedFiles()
+
+		// this.PlainTextEdit_3.SetPlainText(str)
+		// go func() {
+		// 	fileFialog1 := qtwidgets.NewQFileDialog1p()
+		// 	str := fileFialog1.GetOpenFileNamep()
+		// 	fmt.Println(str)
+		// }()
+
+	})
+
+	// 编码转换 : 读取编码
+	qtrt.Connect(this.PushButton_4, "clicked(bool)", func(bool) {
+		path := this.LineEdit_4.Text()
+
+		path = strings.Replace(path, "/", "\\", -1)
+		f, err := os.Open(path)
+		if err != nil {
+			return
+		}
+		bytes, _ := ioutil.ReadAll(f)
+		str := string(bytes)
+		fmt.Println(str)
 	})
 }

@@ -52,6 +52,10 @@ type Ui_MainWindow struct {
 	Label_4         *qtwidgets.QLabel
 	PushButton_4    *qtwidgets.QPushButton
 	CheckBox        *qtwidgets.QCheckBox
+	Label_5         *qtwidgets.QLabel
+	LineEdit_4      *qtwidgets.QLineEdit
+	PushButton_5    *qtwidgets.QPushButton
+	PlainTextEdit_3 *qtwidgets.QPlainTextEdit
 	Tab_2           *qtwidgets.QWidget
 	Menubar         *qtwidgets.QMenuBar
 	Menu            *qtwidgets.QMenu
@@ -72,7 +76,7 @@ func (this *Ui_MainWindow) SetupUi(MainWindow *qtwidgets.QMainWindow) {
 	if MainWindow.ObjectName() == "" {
 		MainWindow.SetObjectName("MainWindow")
 	}
-	MainWindow.Resize(500, 500)
+	MainWindow.Resize(499, 500)
 	this.Actiond = qtwidgets.NewQAction(this.MainWindow)                // 111
 	this.Actiond.SetObjectName("Actiond")                               // 112
 	this.Actions = qtwidgets.NewQAction(this.MainWindow)                // 111
@@ -131,18 +135,18 @@ func (this *Ui_MainWindow) SetupUi(MainWindow *qtwidgets.QMainWindow) {
 	this.PushButton.SetGeometry(370, 30, 61, 23)                        // 114
 	this.PlainTextEdit_2 = qtwidgets.NewQPlainTextEdit(this.GroupBox_2) // 111
 	this.PlainTextEdit_2.SetObjectName("PlainTextEdit_2")               // 112
-	this.PlainTextEdit_2.SetGeometry(10, 120, 251, 261)                 // 114
+	this.PlainTextEdit_2.SetGeometry(10, 90, 251, 151)                  // 114
 	this.ComboBox = qtwidgets.NewQComboBox(this.GroupBox_2)             // 111
 	this.ComboBox.AddItem("", qtcore.NewQVariant12("wtf"))              // 115
 	this.ComboBox.AddItem("", qtcore.NewQVariant12("wtf"))              // 115
 	this.ComboBox.SetObjectName("ComboBox")                             // 112
-	this.ComboBox.SetGeometry(270, 120, 101, 22)                        // 114
+	this.ComboBox.SetGeometry(270, 90, 101, 22)                         // 114
 	this.PushButton_2 = qtwidgets.NewQPushButton(this.GroupBox_2)       // 111
 	this.PushButton_2.SetObjectName("PushButton_2")                     // 112
-	this.PushButton_2.SetGeometry(380, 120, 61, 23)                     // 114
+	this.PushButton_2.SetGeometry(380, 90, 61, 23)                      // 114
 	this.PushButton_3 = qtwidgets.NewQPushButton(this.GroupBox_2)       // 111
 	this.PushButton_3.SetObjectName("PushButton_3")                     // 112
-	this.PushButton_3.SetGeometry(210, 60, 75, 23)                      // 114
+	this.PushButton_3.SetGeometry(310, 60, 75, 23)                      // 114
 	this.LineEdit_3 = qtwidgets.NewQLineEdit(this.GroupBox_2)           // 111
 	this.LineEdit_3.SetObjectName("LineEdit_3")                         // 112
 	this.LineEdit_3.SetGeometry(65, 62, 133, 20)                        // 114
@@ -151,11 +155,23 @@ func (this *Ui_MainWindow) SetupUi(MainWindow *qtwidgets.QMainWindow) {
 	this.Label_4.SetGeometry(11, 61, 48, 16)                            // 114
 	this.PushButton_4 = qtwidgets.NewQPushButton(this.GroupBox_2)       // 111
 	this.PushButton_4.SetObjectName("PushButton_4")                     // 112
-	this.PushButton_4.SetGeometry(290, 60, 75, 23)                      // 114
+	this.PushButton_4.SetGeometry(380, 300, 75, 23)                     // 114
 	this.CheckBox = qtwidgets.NewQCheckBox(this.GroupBox_2)             // 111
 	this.CheckBox.SetObjectName("CheckBox")                             // 112
-	this.CheckBox.SetGeometry(70, 90, 91, 21)                           // 114
+	this.CheckBox.SetGeometry(210, 60, 91, 21)                          // 114
 	this.CheckBox.SetChecked(true)                                      // 114
+	this.Label_5 = qtwidgets.NewQLabel(this.GroupBox_2, 0)              // 111
+	this.Label_5.SetObjectName("Label_5")                               // 112
+	this.Label_5.SetGeometry(10, 260, 61, 21)                           // 114
+	this.LineEdit_4 = qtwidgets.NewQLineEdit(this.GroupBox_2)           // 111
+	this.LineEdit_4.SetObjectName("LineEdit_4")                         // 112
+	this.LineEdit_4.SetGeometry(70, 260, 291, 20)                       // 114
+	this.PushButton_5 = qtwidgets.NewQPushButton(this.GroupBox_2)       // 111
+	this.PushButton_5.SetObjectName("PushButton_5")                     // 112
+	this.PushButton_5.SetGeometry(380, 260, 75, 23)                     // 114
+	this.PlainTextEdit_3 = qtwidgets.NewQPlainTextEdit(this.GroupBox_2) // 111
+	this.PlainTextEdit_3.SetObjectName("PlainTextEdit_3")               // 112
+	this.PlainTextEdit_3.SetGeometry(10, 290, 351, 81)                  // 114
 	this.TabWidget.AddTab(this.Tab_4, "")                               // 115
 	this.Tab_2 = qtwidgets.NewQWidget(nil, 0)                           // 111
 	this.Tab_2.SetObjectName("Tab_2")                                   // 112
@@ -166,7 +182,7 @@ func (this *Ui_MainWindow) SetupUi(MainWindow *qtwidgets.QMainWindow) {
 	this.MainWindow.SetCentralWidget(this.Centralwidget)      // 114
 	this.Menubar = qtwidgets.NewQMenuBar(this.MainWindow)     // 111
 	this.Menubar.SetObjectName("Menubar")                     // 112
-	this.Menubar.SetGeometry(0, 0, 500, 23)                   // 114
+	this.Menubar.SetGeometry(0, 0, 499, 23)                   // 114
 	this.Menu = qtwidgets.NewQMenu(this.Menubar)              // 111
 	this.Menu.SetObjectName("Menu")                           // 112
 	this.Menu_2 = qtwidgets.NewQMenu(this.Menubar)            // 111
@@ -203,7 +219,7 @@ func (this *Ui_MainWindow) SetupUi(MainWindow *qtwidgets.QMainWindow) {
 //  retranslateUi block begin
 func (this *Ui_MainWindow) RetranslateUi(MainWindow *qtwidgets.QMainWindow) {
 	// noimpl: {
-	this.MainWindow.SetWindowTitle(qtcore.QCoreApplication_Translate("MainWindow", "MainWindow", "dummy123", 0))
+	this.MainWindow.SetWindowTitle(qtcore.QCoreApplication_Translate("MainWindow", "Software_Tools", "dummy123", 0))
 	this.Actiond.SetText(qtcore.QCoreApplication_Translate("MainWindow", "\346\211\223\345\274\200", "dummy123", 0))
 	this.Actions.SetText(qtcore.QCoreApplication_Translate("MainWindow", "\351\200\200\345\207\272", "dummy123", 0))
 	this.Actiona.SetText(qtcore.QCoreApplication_Translate("MainWindow", "\345\205\263\344\272\216", "dummy123", 0))
@@ -217,7 +233,7 @@ func (this *Ui_MainWindow) RetranslateUi(MainWindow *qtwidgets.QMainWindow) {
 	this.TabWidget.SetTabText(this.TabWidget.IndexOf(this.Tab_3), qtcore.QCoreApplication_Translate("MainWindow", "\347\263\273\347\273\237\345\267\245\345\205\267", "dummy123", 0))
 	this.TabWidget.SetTabText(this.TabWidget.IndexOf(this.Tab), qtcore.QCoreApplication_Translate("MainWindow", "\344\277\256\346\224\271\346\227\266\351\227\264", "dummy123", 0))
 	this.GroupBox_2.SetTitle(qtcore.QCoreApplication_Translate("MainWindow", "\347\274\226\347\240\201\350\275\254\346\215\242", "dummy123", 0))
-	this.LineEdit_2.SetText(qtcore.QCoreApplication_Translate("MainWindow", "C:/test/", "dummy123", 0))
+	this.LineEdit_2.SetText(qtcore.QCoreApplication_Translate("MainWindow", "./datafile", "dummy123", 0))
 	this.Label_3.SetText(qtcore.QCoreApplication_Translate("MainWindow", "\346\226\207\344\273\266\350\267\257\345\276\204", "dummy123", 0))
 	this.PushButton.SetText(qtcore.QCoreApplication_Translate("MainWindow", "\346\265\217\350\247\210", "dummy123", 0))
 	this.ComboBox.SetItemText(0, qtcore.QCoreApplication_Translate("MainWindow", "UTF-8", "dummy123", 0))
@@ -229,6 +245,9 @@ func (this *Ui_MainWindow) RetranslateUi(MainWindow *qtwidgets.QMainWindow) {
 	this.Label_4.SetText(qtcore.QCoreApplication_Translate("MainWindow", "\346\226\207\344\273\266\347\261\273\345\236\213", "dummy123", 0))
 	this.PushButton_4.SetText(qtcore.QCoreApplication_Translate("MainWindow", "\350\257\273\345\217\226\347\274\226\347\240\201", "dummy123", 0))
 	this.CheckBox.SetText(qtcore.QCoreApplication_Translate("MainWindow", "\345\214\205\345\220\253\345\255\220\347\233\256\345\275\225", "dummy123", 0))
+	this.Label_5.SetText(qtcore.QCoreApplication_Translate("MainWindow", "\346\214\207\345\256\232\346\226\207\344\273\266", "dummy123", 0))
+	this.LineEdit_4.SetText(qtcore.QCoreApplication_Translate("MainWindow", "./datafile/a.txt", "dummy123", 0))
+	this.PushButton_5.SetText(qtcore.QCoreApplication_Translate("MainWindow", "\346\265\217\350\247\210", "dummy123", 0))
 	this.TabWidget.SetTabText(this.TabWidget.IndexOf(this.Tab_4), qtcore.QCoreApplication_Translate("MainWindow", "\347\274\226\347\240\201\350\275\254\346\215\242", "dummy123", 0))
 	this.TabWidget.SetTabText(this.TabWidget.IndexOf(this.Tab_2), qtcore.QCoreApplication_Translate("MainWindow", "\344\270\262\345\217\243\345\267\245\345\205\267", "dummy123", 0))
 	this.Menu.SetTitle(qtcore.QCoreApplication_Translate("MainWindow", "\346\226\207\344\273\266", "dummy123", 0))
